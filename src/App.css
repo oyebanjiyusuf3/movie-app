@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  background-color: #f0f2f5;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  z-index: 100;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.moviecard {
+  margin-top: 20px;
+  padding-right: 30px;
+  transition: transform 500ms ease;
+}
+.moviecard > img {
+  width: 350px;
+  object-fit: contain;
+}
+.moviecard:hover {
+  transform: scale(1.09);
+}
+.heading {
+  margin-left: 30px;
+}
+.main-header {
+  background-color: #032541;
+}
+.logo {
+  font-family: "Pacifico", cursive;
+  color: #fffff9;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  display: flex;
+  list-style-type: none;
+  margin-right: 5rem;
+  flex-wrap: wrap;
+}
+li {
+  margin: 2rem;
+  font-size: 1.05em;
+}
+ul > li {
+  text-decoration: none;
+  color: #fffff9;
+  transition: transform 500ms;
+  opacity: 0.5;
+}
+ul > li:hover {
+  /* color: lightcoral; */
+  color: fffff9;
+  opacity: 1;
+
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.over {
+  width: 350px;
+}
+
+.overview {
+  display: none;
+}
+
+.moviecard:hover .overview {
+  display: inline;
+}
+
+.footer {
+  display: flex;
+  height: 100px;
+  margin-top: 6rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #151516;
+  color: #ffffff;
+  align-items: center;
+}
+.sm > .MuiSvgIcon-root {
+  padding-right: 20px;
 }
