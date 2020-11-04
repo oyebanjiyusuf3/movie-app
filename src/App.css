@@ -97,9 +97,6 @@ ul > li:hover {
 }
 
 @media only screen and (max-width: 968px) {
-  body {
-    margin: 0;
-  }
   .container {
     display: flex;
     margin-left: 2.5rem;
