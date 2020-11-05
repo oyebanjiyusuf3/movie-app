@@ -48,8 +48,8 @@ function App() {
 
       <div>
         <Movie selectedOption={selectedOption} />
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
