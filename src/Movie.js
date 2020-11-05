@@ -2,7 +2,7 @@ import React, { useState, useEffect, forwardRef } from "react";
 import "./App.css";
 import axios from "./axios";
 import Flipmove from "react-flip-move";
-
+import { ThumbUp } from "@material-ui/icons";
 import Loading from "./Loading";
 
 const base_url = "https://image.tmdb.org/t/p/original";
@@ -29,7 +29,14 @@ const Movie = forwardRef(({ selectedOption }, ref) => {
       <h2 className="heading">Showing Top {movies.length} Movies </h2>
       <div className="container">
         {movies.map((movie) => {
-          const { id, title, backdrop_path, overview, name } = movie;
+          const {
+            id,
+            title,
+            backdrop_path,
+            overview,
+            name,
+            vote_count,
+          } = movie;
 
           return title || backdrop_path ? (
             <Flipmove>
@@ -39,7 +46,15 @@ const Movie = forwardRef(({ selectedOption }, ref) => {
                   src={`${base_url}${backdrop_path || ""}`}
                   alt="movie name"
                 />
-                <h5>{title || name}</h5>
+                <div>
+                  <h5 className="title">
+                    {title || name}
+                    <span>
+                      {vote_count}
+                      <ThumbUp fontSize="small" />
+                    </span>
+                  </h5>
+                </div>
 
                 <div className="over">
                   {readMore ? overview : overview.substring(0, 100)}

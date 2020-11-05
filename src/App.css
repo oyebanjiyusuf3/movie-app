@@ -81,6 +81,15 @@ ul > li:hover {
 .moviecard:hover .overview {
   display: inline;
 }
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+span > .MuiSvgIcon-root {
+  margin: 0 auto;
+  color: #032541;
+}
 
 .footer {
   display: flex;
