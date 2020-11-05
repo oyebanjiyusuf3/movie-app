@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Footer from "./Footer";
 import requests from "./requests";
-import Trending from "./Trending";
+import Movie from "./Movie";
 
 function App() {
   const [selectedOption, setSelectedOption] = useState(requests.fetchTrending);
@@ -47,7 +47,7 @@ function App() {
       </div>
 
       <div>
-        <Trending selectedOption={selectedOption} />
+        <Movie selectedOption={selectedOption} />
       </div>
       <Footer />
     </div>

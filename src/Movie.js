@@ -3,18 +3,28 @@ import "./App.css";
 import axios from "./axios";
 import Flipmove from "react-flip-move";
 
+import Loading from "./Loading";
+
 const base_url = "https://image.tmdb.org/t/p/original";
-const Trending = forwardRef(({ selectedOption }, ref) => {
+const Movie = forwardRef(({ selectedOption }, ref) => {
   const [movies, setMovies] = useState([]);
   const [readMore] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios.get(selectedOption).then((request) => {
       console.log(request);
-      return setMovies(request.data.results);
+      setMovies(request.data.results);
+      setLoading(false);
     });
   }, [selectedOption]);
-  return (
+
+  return loading ? (
+    <div className="loading">
+      <Loading />
+    </div>
+  ) : (
     <div>
       <h2 className="heading">Showing Top {movies.length} Movies </h2>
       <div className="container">
@@ -51,4 +61,4 @@ const Trending = forwardRef(({ selectedOption }, ref) => {
   );
 });
 
-export default Trending;
+export default Movie;

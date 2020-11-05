@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap");
 
 body {
-  margin: -23px;
+  margin-top: -23px;
   font-family: "Nunito", sans-serif;
   background-color: #f0f2f5;
 }
@@ -95,7 +95,11 @@ ul > li:hover {
 .sm > .MuiSvgIcon-root {
   padding-right: 20px;
 }
-
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media only screen and (max-width: 968px) {
   .container {
     display: flex;
